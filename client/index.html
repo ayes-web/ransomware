@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please provide payment</title>
+</head>
+<body>
+    <p>Your computer has been infected and all {{ .Num }} of your files have been encrypted</p>
+
+    <p>Please provide payment of 500 euros.</p>
+
+    <form action="{{ .Url }}/"  method="get">
+        <button type="submit">Pay ransom</button>
+    </form>
+</body>
+</html>
